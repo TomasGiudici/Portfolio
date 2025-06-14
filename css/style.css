@@ -1,0 +1,275 @@
+/* --- ESTILOS GENERALES --- */
+:root {
+    --primary-color: #007bff; /* Un azul vibrante */
+    --secondary-color: #6c757d; /* Gris oscuro */
+    --text-color: #343a40; /* Negro casi */
+    --light-bg: #f8f9fa; /* Gris muy claro para secciones */
+    --white: #ffffff;
+    --dark: #212529; /* Negro para fondo de footer */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Muy importante para el layout */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Elegí una fuente que te guste */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Espaciado a los lados */
+}
+
+.section-padding {
+    padding: 80px 0; /* Espaciado superior e inferior para las secciones */
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+h1, h2, h3 {
+    color: var(--dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* --- CABECERA (HERO) --- */
+.hero {
+    background: var(--dark); /* Fondo oscuro */
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 60vh; /* Altura mínima de la cabecera */
+    display: flex; /* Para centrar el contenido verticalmente */
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: var(--light-bg);
+}
+
+/* --- SECCIÓN SOBRE MÍ --- */
+.about-me p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: justify; /* Alineación justificada para el texto largo */
+}
+
+.about-me img {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+    border-radius: 50%; /* Para hacerla redonda */
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-top: 30px;
+}
+
+/* --- SECCIÓN HABILIDADES --- */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap; /* Para que las habilidades se envuelvan en varias líneas */
+    justify-content: center;
+    gap: 15px; /* Espacio entre las habilidades */
+}
+
+.skill-list span {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.skill-list span:hover {
+    transform: translateY(-3px); /* Pequeño efecto al pasar el mouse */
+    background-color: #0056b3;
+}
+
+/* --- SECCIÓN PROYECTOS --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre proyectos */
+    margin-top: 40px;
+}
+
+.project-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.project-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item p {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.project-links a {
+    margin: 0 5px;
+}
+
+/* --- SECCIÓN CONTACTO --- */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact button {
+    align-self: center; /* Centrar el botón */
+    margin-top: 10px;
+}
+
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .contact input,
+    .contact textarea,
+    .contact button {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
