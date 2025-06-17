@@ -1,275 +1,129 @@
-/* --- ESTILOS GENERALES --- */
-:root {
-    --primary-color: #007bff; /* Un azul vibrante */
-    --secondary-color: #6c757d; /* Gris oscuro */
-    --text-color: #343a40; /* Negro casi */
-    --light-bg: #f8f9fa; /* Gris muy claro para secciones */
-    --white: #ffffff;
-    --dark: #212529; /* Negro para fondo de footer */
+@font-face {
+    font-family: 'Stellar';
+    src: url("../assets/fonts/Achieve-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-* {
+@font-face {
+    font-family: 'Stellar';
+    src: url("../assets/fonts/Achieve-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Stellar', sans-serif;
+    background-color: #f7de53;
+    overflow-x: hidden; /* Evita scroll horizontal inesperado */
     margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Muy importante para el layout */
 }
 
-body {
-    font-family: 'Arial', sans-serif; /* Elegí una fuente que te guste */
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
+.hero{
+    padding: 15% 0 25%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
 
-.container {
-    max-width: 1200px; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centrar el contenedor */
-    padding: 0 20px; /* Espaciado a los lados */
+.container{
+    max-width: 1500px;
+    margin: auto;
 }
 
-.section-padding {
-    padding: 80px 0; /* Espaciado superior e inferior para las secciones */
+header p{
+    font-size: 1.8vw;
 }
 
-.bg-light {
-    background-color: var(--light-bg);
+header h1{
+    font-size: 5vw;
+    font-weight: 600;
+    padding-top: 0.4em;
+    padding-bottom: 0.5em;
 }
 
-h1, h2, h3 {
-    color: var(--dark);
-    margin-bottom: 20px;
-    text-align: center;
+img{
+    border-radius: 50%;
+    max-width: 350px;
+    max-height: 350px;
+    border: 2px solid black;
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-p {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.btn {
+nav a{
     display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 1.2em 2em;
+    margin: 0 10px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    transition: transform 0.5s ease;
+    white-space: nowrap; /*Para que no se separe en 2 lineas de texto*/
 }
 
-.btn:hover {
-    background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
-}
-
-.btn-small {
-    padding: 8px 15px;
-    font-size: 0.9em;
-}
-
-/* --- CABECERA (HERO) --- */
-.hero {
-    background: var(--dark); /* Fondo oscuro */
-    color: var(--white);
-    text-align: center;
-    padding: 100px 0;
-    min-height: 60vh; /* Altura mínima de la cabecera */
-    display: flex; /* Para centrar el contenido verticalmente */
-    align-items: center;
-    justify-content: center;
-}
-
-.hero h1 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    color: var(--light-bg);
-}
-
-/* --- SECCIÓN SOBRE MÍ --- */
-.about-me p {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    text-align: justify; /* Alineación justificada para el texto largo */
-}
-
-.about-me img {
-    display: block;
-    margin: 0 auto;
-    max-width: 250px;
-    border-radius: 50%; /* Para hacerla redonda */
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin-top: 30px;
-}
-
-/* --- SECCIÓN HABILIDADES --- */
-.skill-list {
-    display: flex;
-    flex-wrap: wrap; /* Para que las habilidades se envuelvan en varias líneas */
-    justify-content: center;
-    gap: 15px; /* Espacio entre las habilidades */
-}
-
-.skill-list span {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.skill-list span:hover {
-    transform: translateY(-3px); /* Pequeño efecto al pasar el mouse */
-    background-color: #0056b3;
-}
-
-/* --- SECCIÓN PROYECTOS --- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-    gap: 30px; /* Espacio entre proyectos */
-    margin-top: 40px;
-}
-
-.project-item {
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 25px;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.project-item h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.project-item img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.project-item p {
-    font-size: 0.95em;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-.project-links a {
-    margin: 0 5px;
-}
-
-/* --- SECCIÓN CONTACTO --- */
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact input,
-.contact textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+nav a:first-child{
+    background-color: black;
+    color: rgb(216, 216, 216);
     font-size: 1em;
+    font-weight: bold;
 }
 
-.contact textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+nav a:first-child:hover {
+    transform: scale(1.05);
 }
 
-.contact button {
-    align-self: center; /* Centrar el botón */
-    margin-top: 10px;
+nav a:last-child{
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
 }
 
-.social-links {
-    margin-top: 30px;
-    text-align: center;
+nav a:last-child:hover{
+    transform: scale(1.05);
 }
 
-.social-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 0 15px;
-    transition: color 0.3s ease;
+
+.sobre-mi{
+  background-color: rgb(139, 139, 139);
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
-.social-links a:hover {
-    color: #0056b3;
-}
 
-/* --- FOOTER --- */
-footer {
-    background-color: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-}
 
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
+
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5em;
+    .container {
+        padding: 0 10px; /* Reduce aún más el padding */
     }
 
-    .hero p {
-        font-size: 1.2em;
+    .hero {
+        padding: 8% 0 12%; /* Reduce el padding del hero */
+        gap: 20px; /* Reduce el espacio entre elementos */
     }
 
-    h2 {
-        font-size: 2em;
+    header p {
+        font-size: 3.5vw; /* Se hace más grande para mejor legibilidad */
     }
 
-    .section-padding {
-        padding: 50px 0;
+    header h1 {
+        font-size: 8vw; /* El h1 se hace más grande para mayor impacto */
     }
 
-    .project-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
-
-    .contact input,
-    .contact textarea,
-    .contact button {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    img {
+        width: 50vw; /* La imagen ocupa más espacio en pantallas muy pequeñas */
+        height: 50vw;
+        min-width: 120px; /* Asegura un tamaño mínimo un poco más pequeño */
+        min-height: 120px;
+        display: none;
     }
 }
