@@ -48,14 +48,16 @@ header{
     margin: 0;
     position: fixed;
     top: 0;
+    z-index: 1000;
 
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 header .container{
     max-width: 100%;
-    align-items: end;
+    height: 100%;
     margin: 0;
     gap: 0;
 }
@@ -64,7 +66,6 @@ header nav{
     display: flex;
     gap: 0;
     height: 100%;
-    align-items: stretch;
 }
 
 header nav a{
@@ -73,7 +74,9 @@ header nav a{
     border-left: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
     padding: 0px 15px;
-    height: 100%
+    height: 100%;
+    font-size: 1.2ch;
+    align-content: center;
 }
 
 header nav a:last-child{
@@ -89,7 +92,7 @@ body{
     overflow-x: hidden; /* Evita scroll horizontal inesperado */
     margin: 0px;
     color: rgb(220, 220, 220);
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(30, 30, 30);
 }
 
 .container{
@@ -107,15 +110,16 @@ body{
     padding-right: 20px;
 
     margin:20px;
+    text-align: center;
 }
 
 #hero p{
-    font-size: 1.6vw;
+    font-size: 3ch;
     font-weight: bold;
 }
 
 #hero h1{
-    font-size: 5.5vw;
+    font-size: 10ch;
     font-weight: bold;
     padding:0;
     margin: 0;
@@ -145,11 +149,12 @@ img{
     border-radius: 15px;
     transition: transform 0.5s ease;
     white-space: nowrap; /*Para que no se separe en 2 lineas de texto*/
+    width: 140px;
 
     font-size: 1.2em;
     font-weight: bold;
     color: rgb(230, 230, 230);
-    background-color: rgb(114, 57, 167);
+    background-color: rgb(125, 78, 168);
 }
 
 .cv:hover {
@@ -174,7 +179,7 @@ img{
 }
 
 #sobre-mi h2{
-    font-size: 2.2em;
+    font-size: 3ch;
     font-weight: bold;
 }
 
@@ -203,28 +208,29 @@ img{
     top: 10%; /* Inicia la línea al 10% de la altura del container */
     bottom: 0%; /* Termina la línea al 10% desde abajo del container */
     width: 2px;
-    background-color: rgb(114, 57, 167);
+    background-color: rgb(125, 78, 168);
     border-radius: 2px;
 }
 
 #sobre-mi::after {
-    content: ''; /* Contenido vacío para el pseudo-elemento */
-    position: absolute; /* Posicionamiento absoluto respecto a #sobre-mi */
-    bottom: 0px; /* <<<< POSICIÓN: 50px desde la parte inferior de la sección <<<< */
+    content: ''; 
+    position: absolute; 
+    bottom: 0px; 
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Ajuste para un centrado perfecto */
-    width: 900px; /* Ancho de la línea */
-    height: 3px; /* Grosor de la línea */
-    background-color: #313131; /* Tu color morado */
+    width: 900px; 
+    height: 3px; 
+    background-color: #313131;
     border-radius: 2px;
 }
 
 #tecnologias{
     margin: 100px;
+    position: relative;
 }
 
 #tecnologias h2{
-    font-size: 2.2em;
+    font-size: 3ch;
 }
 
 .cards{
@@ -249,7 +255,7 @@ img{
 
 .card i{
     font-size: 6em;
-    color: rgb(114, 57, 167);
+    color: rgb(125, 78, 168);
 }
 
 .card h2{
@@ -273,6 +279,70 @@ img{
     margin: 0;
 }
 
+#tecnologias::before{
+    content: ''; 
+    position: absolute; 
+    bottom: 0px;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajuste para un centrado perfecto */
+    width: 900px; 
+    height: 3px; 
+    background-color: #313131;
+    border-radius: 2px;
+}
+
+#contacto {
+    margin: 100px;
+}
+
+#contacto h2 {
+    font-size: 3ch;
+}
+
+#contacto a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+@media (max-width: 1450px) {
+    img {
+        display: none;
+    }
+
+    #tecnologias {
+        margin: 60px 0; /* Reduce el margen exterior */
+        padding: 20px;
+    }
+
+    #tecnologias h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        gap: 20px; /* Reduce un poco el espacio entre cards */
+    }
+
+    .card {
+        flex-basis: calc(50% - 20px); /* 2 cards por fila con gap de 20px */
+        max-width: calc(50% - 20px);
+        padding: 18px 12px; /* Ligeramente menos padding */
+        min-height: 260px; /* Ajusta la altura mínima si es necesario */
+    }
+
+    .card i {
+        font-size: 5em; /* Iconos un poco más pequeños */
+    }
+
+    .card h2 {
+        font-size: 1.4em;
+    }
+
+    .card .items {
+        max-width: 180px; /* Ajusta el ancho de los items si es necesario */
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 10px; /* Reduce aún más el padding */
@@ -283,15 +353,58 @@ img{
         gap: 20px; /* Reduce el espacio entre elementos */
     }
 
-    header p {
-        font-size: 3.5vw; /* Se hace más grande para mejor legibilidad */
+    #hero p {
+        font-size: 2ch; /* Se hace más grande para mejor legibilidad */
     }
 
-    header h1 {
-        font-size: 8vw; /* El h1 se hace más grande para mayor impacto */
+    #hero h1 {
+        font-size: 6ch; /* El h1 se hace más grande para mayor impacto */
     }
 
     img {
         display: none;
+    }
+
+    #tecnologias {
+        margin: 40px 0;
+        padding: 15px;
+    }
+
+    #tecnologias h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .cards {
+        flex-direction: column; /* <<<< CLAVE: Apila las cards en una columna <<<< */
+        align-items: center; /* Centra las cards apiladas */
+        gap: 25px; /* Espacio entre las cards apiladas */
+    }
+
+    .card {
+        width: 90%; /* Las cards ocupan el 90% del ancho del contenedor */
+        max-width: 300px; /* Limita su ancho máximo en móvil */
+        min-width: unset; /* Quita el min-width si quieres que se ajusten completamente */
+        flex-basis: auto; /* Permite que la base se ajuste al contenido si es necesario */
+        padding: 20px; /* Padding ajustado para móvil */
+        min-height: auto; /* <<<< CLAVE: Permite que la altura de la card se ajuste a su contenido <<<< */
+                          /* Esto es importante en móvil para que no se corten los items */
+    }
+
+    .card i {
+        font-size: 4.5em; /* Iconos más pequeños para móvil */
+    }
+
+    .card h2 {
+        font-size: 1.3em;
+    }
+
+    .card .items {
+        max-width: 100%; /* Permite que los items ocupen todo el ancho de la card */
+        gap: 7px; /* Aumenta un poco el gap para que los p tags no se amontonen */
+    }
+
+    .card .items p {
+        font-size: 0.85em; /* Texto de los items un poco más pequeño */
     }
 }
