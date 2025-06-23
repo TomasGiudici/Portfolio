@@ -1,3 +1,20 @@
 git add .
 git commit -m ""
 git push origin master/main
+
+
+tecnologias:
+
+back
+    js
+    java
+    nestjs
+    mysql
+    mongodb
+front
+    html5
+    css
+    angular
+herramientas
+    vscode
+    github

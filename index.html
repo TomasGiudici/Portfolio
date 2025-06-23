@@ -5,70 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Para que sea responsive-->
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <header class="hero">
+    <header>
         <div class="container">
-            <p class="focus-in-expand">Hola, Soy Tomás Giudici</p>
-            <h1 class="focus-in-expand">DESARROLLADOR WEB</h1>
-            <nav class="focus-in-expand">
-                <a href="#proyectos" class="heartbeat">Mis Trabajos</a>
-                <a href="#contacto">Contactame</a>
+            <nav>
+                <a href="#hero">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#tecnologias">Tecnologías</a>
+                <a href=""></a>
             </nav>
-        </div>
-        <div class="container">
-            <img src="assets\imgs\foto-perfil.jpg" class="focus-in-expand">
         </div>
     </header>
 
-    <section id="sobre-mi" class="sobre-mi">
+    <section id="hero">
         <div class="container">
-            <h2>Quien soy</h2>
-            <p>
-                Soy estudiante de Ingeniería en Sistemas de Información, actualmente cursando 4to año.
-                Aspiro a desarrollarme como profesional, aplicando mis conocimientos sobre diseño y desarrollo de aplicaciones.
-            </p>
-            </div>
-    </section>
-
-    <section id="habilidades" class="skills section-padding bg-light">
-        <div class="container">
-            <h2>Mis Habilidades</h2>
-            <div class="skill-list">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>React.js</span>
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>MongoDB</span>
-                <span>SQL</span>
-                <span>Git/GitHub</span>
-                </div>
+            <p>Hola, soy</p>
+            <h1 class="bg-pan-left">Tomás Giudici</h1>
+            <p>Programador, apasionado por el desarrollo Frontend</p>
+            <nav>
+                <a href="assets/docs/cv.pdf" class="cv" download="cv.pdf">Descargar CV <i class="fas fa-download"></i></a>
+                <a href="#contacto" class="contact">Contactame <i class="fas fa-paper-plane"></i></a>
+            </nav>
         </div>
     </section>
 
-    <section id="contacto" class="contact section-padding bg-light">
+    <section id="sobre-mi">
         <div class="container">
-            <h2>Contacto</h2>
-            <p>¿Interesado en trabajar juntos? Enviame un mensaje.</p>
-            <form action="mailto:tuemail@example.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Email" required>
-                <textarea name="message" placeholder="Tu Mensaje" rows="5" required></textarea>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
-                <a href="https://github.com/tu-usuario" target="_blank">GitHub</a>
-                </div>
+            <img src="assets\imgs\foto-perfil.jpg" class="focus-in-expand">
+        </div>
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy estudiante de Ingeniería en Sistemas de Información, actualmente cursando 4to año<br>
+                en la Universidad Tecnológica Nacional de Villa María.
+            </p>
+            <p>
+                Soy una persona responsable, autodidacta y proactiva, con <strong>capacidad para resolver problemas</strong>.<br>
+                Cuento con conocimientos sobre <strong>diseño</strong> y <strong>desarrollo</strong> de aplicaciones, uso de <strong>bases de datos,</strong><br>
+                <strong>programación orientada a objetos</strong> y manejo de <strong>inteligencia artificial.</strong>
+            </p>
+            <p>
+                Aspiro a consolidarme como profesional, aplicando mis conocimientos en el mundo real, pero sobre todo, <br>
+                busco la posibilidad de ampliar los mismos aprendiendo todo lo posible.
+            </p>
+        </div>
+    </section>
+
+    <section id="tecnologias">
+        <div class="container">
+            <h2>Tecnologías</h2>
+            <div class="cards">
+                <span class="card">
+                    <div class="icono"><i class="fa fa-code" aria-hidden="true"></i></div>
+                    <h2>Frontend</h2>
+                    <div class="items">
+                        <p>Html5</p>
+                        <p>CSS</p>
+                        <p>Angular</p>
+                        <p>JavaScript</p>
+                        <p>TypeScript</p>
+                    </div>
+                </span>
+
+                <span class="card">
+                    <div class="icono"><i class="fa fa-server" aria-hidden="true"></i></div>
+                    <h2>Backend</h2>
+                    <div class="items">
+                        <p>Java</p>
+                        <p>MySQL</p>
+                        <p>MongoDB</p>
+                    </div>
+                </span>
+
+                <span class="card">
+                    <div class="icono"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <h2>Herramientas</h2>
+                    <div class="items">
+                        <p>VSCode</p>
+                        <p>GitHub</p>
+                    </div>
+                </span>
+
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 [Tu Nombre]. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Tomás Giudici</p>
         </div>
     </footer>
 
