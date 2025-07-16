@@ -15,8 +15,8 @@
 }
 
 .bg-pan-left {
-    -webkit-animation: bg-pan-left 4s linear infinite alternate both;
-	        animation: bg-pan-left 4s linear infinite alternate both;
+    -webkit-animation: bg-pan-left 3s linear infinite alternate both;
+	        animation: bg-pan-left 3s linear infinite alternate both;
 }
 
 @-webkit-keyframes bg-pan-left {
@@ -39,6 +39,10 @@
 
 html{
     scroll-behavior: smooth;
+}
+
+a {
+    cursor: default;
 }
 
 header{
@@ -146,8 +150,8 @@ body{
     padding: 1em 2em 1.2em 2em;
     margin: 0px 10px;
     text-decoration: none;
-    border-radius: 15px;
-    transition: transform 0.5s ease;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
     white-space: nowrap; /*Para que no se separe en 2 lineas de texto*/
     width: 140px;
 
@@ -157,25 +161,19 @@ body{
     background-color: rgb(125, 78, 168);
 }
 
-.cv:hover {
-    transform: scale(1.05);
-}
-
-.contact:hover{
-    transform: scale(1.05);
+#hero nav a:hover {
+    background-color: rgb(98, 62, 133);
 }
 
 
 #sobre-mi{
-  padding: 250px 20px;
-  display: flex;
-  flex-wrap: wrap;
+    margin: 250px 0px;
+    display: flex;
+    flex-wrap: wrap;
 
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 #sobre-mi h2{
@@ -212,21 +210,8 @@ body{
     border-radius: 2px;
 }
 
-#sobre-mi::after {
-    content: ''; 
-    position: absolute; 
-    bottom: 0px; 
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste para un centrado perfecto */
-    width: 900px; 
-    height: 3px; 
-    background-color: #313131;
-    border-radius: 2px;
-}
-
 #tecnologias{
-    margin: 100px;
-    position: relative;
+    margin: 150px;
 }
 
 #tecnologias h2{
@@ -279,28 +264,17 @@ body{
     margin: 0;
 }
 
-#tecnologias::before{
-    content: ''; 
-    position: absolute; 
-    bottom: 0px;
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste para un centrado perfecto */
-    width: 900px; 
-    height: 3px; 
-    background-color: #313131;
-    border-radius: 2px;
-}
-
-#proyectos {
-    position: relative;
-}
-
 #proyectos h2 {
     font-size: 3ch;
 }
 
 .proyectos-grid {
     margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .proyectos-grid img {
@@ -308,7 +282,7 @@ body{
     max-height: 300px;
     object-fit: cover;
     transition: transform 0.7s ease;
-    margin: 10px;
+    margin: 10px 37px 10px 10px;
 }
 
 .proyectos-grid img:hover {
@@ -319,6 +293,8 @@ body{
     display: flex;
     flex-direction: row;
     padding: 20px;
+
+    border: 3px solid #313131;
 }
 
 .project-info h3 {
@@ -333,17 +309,17 @@ body{
 .project-info a {
     text-decoration: none;
     display: inline-block;
-    margin: 50px 0px;
+    margin: 50px 0px 10px;
     padding: 15px 25px 17px 25px;
 
     color: rgb(230, 230, 230);
     background-color: rgb(125, 78, 168);
-    border-radius: 15px;
-    transition: transform 0.5s ease;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .project-info a:hover {
-    transform: scale(1.05);
+    background-color: rgb(98, 62, 133);
 }
 
 .proyecto-tech-stack span {
@@ -354,20 +330,8 @@ body{
     margin: 5px 0px;
 }
 
-#proyectos::before{
-    content: ''; 
-    position: absolute; 
-    bottom: 0px;
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste para un centrado perfecto */
-    width: 900px; 
-    height: 3px; 
-    background-color: #313131;
-    border-radius: 2px;
-}
-
 #contacto {
-    margin: 100px;
+    margin: 150px;
 }
 
 #contacto h2 {
@@ -377,6 +341,10 @@ body{
 #contacto a {
     color: rgb(230, 230, 230);
     text-decoration: none;
+}
+
+#contacto a:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 1450px) {
@@ -426,7 +394,13 @@ body{
     .proyectos-grid img {
         display: flex;
         max-width: 100%;
+        max-height: 100%;
         height: auto;
+        margin: 10px 10px;
+    }
+
+    .proyectos-grid img:hover {
+        transform: scale(1.05);
     }
 }
 
