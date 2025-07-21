@@ -135,15 +135,17 @@ body{
 }
 
 #foto-perfil {
-    border-radius: 50%;
-    width: 30vw;
-    height: 30vw;
-    max-width: 300px;
-    max-height: 300px;
-    border: 2px solid black;
-    margin: 0px;
-    padding: 0px;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0;
 }
+
 
 #hero nav a{
     display: inline-block;
@@ -286,12 +288,13 @@ body{
 }
 
 .proyectos-grid img:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
 .proyect-card {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 20px;
 
     border: 3px solid #313131;
